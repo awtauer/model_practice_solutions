@@ -17,10 +17,11 @@ class QuestionsController < ApplicationController
 
   def question_3
     # Which director has the most movies on the list?
+    # (If there's a tie, any one of them is fine)
 
     # Your Ruby goes here.
 
-    the_leader = Director.new
+    the_leader = Director.first
 
     Director.all.each do |the_director|
       if the_director.movies.count > the_leader.movies.count
@@ -37,7 +38,7 @@ class QuestionsController < ApplicationController
 
     # Your Ruby goes here.
 
-    the_leader = Actor.new
+    the_leader = Actor.first
 
     Actor.all.each do |the_actor|
       if the_actor.movies.count > the_leader.movies.count
